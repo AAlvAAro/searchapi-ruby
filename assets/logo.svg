@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <defs>
+    <!-- Ruby gem gradient -->
+    <linearGradient id="rubyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#CC0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B0000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rubyShine" x1="0%" y1="0%" x2="50%" y2="50%">
+      <stop offset="0%" style="stop-color:#FF9999;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0" />
+    </linearGradient>
+    <!-- Octopus gradient -->
+    <linearGradient id="octoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B68EE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4B0082;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="octoBelly" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9B8AFB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B68EE;stop-opacity:1" />
+    </linearGradient>
+    <!-- Background -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161B22;stop-opacity:1" />
+    </linearGradient>
+    <!-- Sparkle filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="320" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle grid dots -->
+  <g opacity="0.08" fill="#fff">
+    <circle cx="40" cy="40" r="1.5"/><circle cx="80" cy="40" r="1.5"/><circle cx="120" cy="40" r="1.5"/>
+    <circle cx="160" cy="40" r="1.5"/><circle cx="200" cy="40" r="1.5"/><circle cx="240" cy="40" r="1.5"/>
+    <circle cx="280" cy="40" r="1.5"/><circle cx="320" cy="40" r="1.5"/><circle cx="360" cy="40" r="1.5"/>
+    <circle cx="40" cy="80" r="1.5"/><circle cx="80" cy="80" r="1.5"/><circle cx="120" cy="80" r="1.5"/>
+    <circle cx="160" cy="80" r="1.5"/><circle cx="200" cy="80" r="1.5"/><circle cx="240" cy="80" r="1.5"/>
+    <circle cx="680" cy="240" r="1.5"/><circle cx="720" cy="240" r="1.5"/><circle cx="760" cy="240" r="1.5"/>
+    <circle cx="680" cy="280" r="1.5"/><circle cx="720" cy="280" r="1.5"/><circle cx="760" cy="280" r="1.5"/>
+  </g>
+
+  <!-- === OCTOPUS === -->
+  <g filter="url(#shadow)" transform="translate(80, 30)">
+    <!-- Tentacles (back ones) -->
+    <!-- Left back tentacle -->
+    <path d="M60 170 Q30 210 15 250 Q5 275 20 285 Q30 275 35 260 Q45 230 65 195" 
+          fill="url(#octoGrad)" opacity="0.7"/>
+    <!-- Right back tentacle -->
+    <path d="M170 170 Q200 210 215 250 Q225 275 210 285 Q200 275 195 260 Q185 230 165 195" 
+          fill="url(#octoGrad)" opacity="0.7"/>
+    
+    <!-- Tentacles (front ones with suction cups) -->
+    <!-- Far left tentacle -->
+    <path d="M50 165 Q10 200 -5 240 Q-12 265 5 270 Q15 258 18 245 Q28 215 55 185" 
+          fill="url(#octoGrad)"/>
+    <circle cx="2" cy="258" r="4" fill="#9B8AFB" opacity="0.5"/>
+    <circle cx="12" cy="245" r="3.5" fill="#9B8AFB" opacity="0.5"/>
+    <circle cx="20" cy="230" r="3" fill="#9B8AFB" opacity="0.4"/>
+    
+    <!-- Left tentacle -->
+    <path d="M70 175 Q50 220 40 255 Q35 280 50 282 Q57 270 58 255 Q62 225 75 195" 
+          fill="url(#octoGrad)"/>
+    <circle cx="47" cy="272" r="4" fill="#9B8AFB" opacity="0.5"/>
+    <circle cx="50" cy="255" r="3.5" fill="#9B8AFB" opacity="0.5"/>
+    
+    <!-- Right tentacle -->
+    <path d="M160 175 Q180 220 190 255 Q195 280 180 282 Q173 270 172 255 Q168 225 155 195" 
+          fill="url(#octoGrad)"/>
+    <circle cx="183" cy="272" r="4" fill="#9B8AFB" opacity="0.5"/>
+    <circle cx="180" cy="255" r="3.5" fill="#9B8AFB" opacity="0.5"/>
+    
+    <!-- Far right tentacle -->
+    <path d="M180 165 Q220 200 235 240 Q242 265 225 270 Q215 258 212 245 Q202 215 175 185" 
+          fill="url(#octoGrad)"/>
+    <circle cx="228" cy="258" r="4" fill="#9B8AFB" opacity="0.5"/>
+    <circle cx="218" cy="245" r="3.5" fill="#9B8AFB" opacity="0.5"/>
+
+    <!-- Two front tentacles holding the Ruby -->
+    <!-- Left holding tentacle -->
+    <path d="M90 175 Q85 200 95 225 Q100 240 120 245 Q130 248 140 240" 
+          fill="url(#octoGrad)"/>
+    <circle cx="108" cy="238" r="3" fill="#9B8AFB" opacity="0.5"/>
+    <circle cx="120" cy="243" r="3" fill="#9B8AFB" opacity="0.5"/>
+    
+    <!-- Right holding tentacle -->
+    <path d="M140 175 Q145 200 135 225 Q130 240 120 245 Q110 248 100 240" 
+          fill="url(#octoGrad)"/>
+    <circle cx="132" cy="238" r="3" fill="#9B8AFB" opacity="0.5"/>
+
+    <!-- Head -->
+    <ellipse cx="115" cy="120" rx="75" ry="70" fill="url(#octoGrad)"/>
+    <!-- Belly/face area -->
+    <ellipse cx="115" cy="135" rx="55" ry="45" fill="url(#octoBelly)" opacity="0.4"/>
+    
+    <!-- Eyes -->
+    <!-- Left eye -->
+    <ellipse cx="90" cy="115" rx="18" ry="20" fill="white"/>
+    <ellipse cx="93" cy="117" rx="10" ry="12" fill="#1a1a2e"/>
+    <circle cx="97" cy="112" r="4" fill="white"/>
+    <circle cx="89" cy="120" r="2" fill="white" opacity="0.5"/>
+    
+    <!-- Right eye -->
+    <ellipse cx="140" cy="115" rx="18" ry="20" fill="white"/>
+    <ellipse cx="143" cy="117" rx="10" ry="12" fill="#1a1a2e"/>
+    <circle cx="147" cy="112" r="4" fill="white"/>
+    <circle cx="139" cy="120" r="2" fill="white" opacity="0.5"/>
+    
+    <!-- Happy mouth -->
+    <path d="M100 145 Q115 160 130 145" stroke="#4B0082" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Cute cheek blush -->
+    <ellipse cx="78" cy="140" rx="10" ry="6" fill="#FF6B9D" opacity="0.3"/>
+    <ellipse cx="152" cy="140" rx="10" ry="6" fill="#FF6B9D" opacity="0.3"/>
+
+    <!-- === RUBY GEM (held by tentacles) === -->
+    <g transform="translate(115, 258)" filter="url(#glow)">
+      <!-- Ruby gem shape (pentagon-ish) -->
+      <polygon points="0,-28 25,-10 18,22 -18,22 -25,-10" fill="url(#rubyGrad)" stroke="#FF4444" stroke-width="1.5"/>
+      <!-- Facets -->
+      <polygon points="0,-28 12,-10 0,5 -12,-10" fill="url(#rubyShine)"/>
+      <polygon points="0,5 12,-10 18,22 0,22" fill="#AA0000" opacity="0.5"/>
+      <polygon points="0,5 -12,-10 -18,22 0,22" fill="#CC0000" opacity="0.3"/>
+      <!-- Shine -->
+      <polygon points="0,-28 8,-14 0,-8 -8,-14" fill="white" opacity="0.25"/>
+      <!-- Glow around gem -->
+      <circle cx="0" cy="0" r="32" fill="#FF0000" opacity="0.08"/>
+    </g>
+  </g>
+
+  <!-- === TITLE TEXT === -->
+  <g transform="translate(340, 100)">
+    <!-- "Search API" text -->
+    <text x="0" y="60" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="white" letter-spacing="-1">
+      Search API
+    </text>
+    <!-- "Ruby" text with gem color -->
+    <text x="0" y="120" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="56" font-weight="800" fill="url(#rubyGrad)" letter-spacing="-1">
+      Ruby
+    </text>
+    <!-- Tagline -->
+    <text x="2" y="155" font-family="'Segoe UI', system-ui, -apple-system, sans-serif" font-size="16" fill="#8B949E" letter-spacing="0.5">
+      49 search engines. One Ruby gem.
+    </text>
+  </g>
+
+  <!-- Sparkle decorations -->
+  <g filter="url(#glow)" opacity="0.6">
+    <polygon points="620,55 623,62 630,65 623,68 620,75 617,68 610,65 617,62" fill="#FFD700"/>
+    <polygon points="720,90 722,95 727,97 722,99 720,104 718,99 713,97 718,95" fill="#FF6B6B"/>
+    <polygon points="670,160 672,165 677,167 672,169 670,174 668,169 663,167 668,165" fill="#7B68EE"/>
+    <polygon points="370,50 372,54 376,55 372,57 370,61 368,57 364,55 368,54" fill="#4FC3F7"/>
+    <polygon points="750,200 752,205 757,207 752,209 750,214 748,209 743,207 748,205" fill="#FFD700"/>
+  </g>
+
+  <!-- Bottom decorative line -->
+  <rect x="340" y="270" width="200" height="3" rx="1.5" fill="url(#rubyGrad)" opacity="0.4"/>
+</svg>
