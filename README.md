@@ -26,6 +26,9 @@
 - [Configuration](#configuration)
 - [Supported Engines](#supported-engines)
 - [Usage](#usage)
+  <details>
+  <summary>All 49 engines...</summary>
+
   - [Google Search](#google-search)
   - [Google Rank Tracking](#google-rank-tracking)
   - [Google Maps](#google-maps)
@@ -75,6 +78,8 @@
   - [Reddit Ad Library](#reddit-ad-library)
   - [Meta Ad Library](#meta-ad-library)
   - [TikTok Ads Library](#tiktok-ads-library)
+
+  </details>
 - [Response Object](#response-object)
 - [Error Handling](#error-handling)
 - [Advanced Usage](#advanced-usage)
@@ -141,6 +146,9 @@ end
 
 ## Supported Engines
 
+<details>
+<summary><b>View all 49 supported engines</b></summary>
+
 | Category | Engine | Accessor |
 |----------|--------|----------|
 | **Google** | Google Search | `SearchApi.google` |
@@ -193,9 +201,14 @@ end
 | | Meta Ad Library | `SearchApi.meta_ad_library` |
 | | TikTok Ads Library | `SearchApi.tiktok_ads_library` |
 
+</details>
+
 ## Usage
 
-### Google Search
+
+<details>
+<summary><b>Google Search</b></summary>
+
 
 ```ruby
 # Basic search
@@ -210,7 +223,12 @@ response = SearchApi.google.search("ruby programming",
 )
 ```
 
-### Google Rank Tracking
+
+</details>
+
+<details>
+<summary><b>Google Rank Tracking</b></summary>
+
 
 ```ruby
 # Track rankings (up to 100 results per request)
@@ -223,7 +241,12 @@ response = SearchApi.google_rank_tracking.search("plumber near me",
 )
 ```
 
-### Google Maps
+
+</details>
+
+<details>
+<summary><b>Google Maps</b></summary>
+
 
 ```ruby
 # Search for places
@@ -242,7 +265,12 @@ response = SearchApi.google_maps.directions(
 )
 ```
 
-### Google News
+
+</details>
+
+<details>
+<summary><b>Google News</b></summary>
+
 
 ```ruby
 response = SearchApi.google_news.search("artificial intelligence")
@@ -254,7 +282,12 @@ response = SearchApi.google_news.search("tech startups",
 )
 ```
 
-### Google Scholar
+
+</details>
+
+<details>
+<summary><b>Google Scholar</b></summary>
+
 
 ```ruby
 # Search papers
@@ -270,7 +303,12 @@ response = SearchApi.google_scholar.search("deep learning",
 response = SearchApi.google_scholar.cite("article_id_here")
 ```
 
-### Google Shopping
+
+</details>
+
+<details>
+<summary><b>Google Shopping</b></summary>
+
 
 ```ruby
 response = SearchApi.google_shopping.search("laptop")
@@ -284,7 +322,12 @@ response = SearchApi.google_shopping.search("headphones",
 )
 ```
 
-### Google Flights
+
+</details>
+
+<details>
+<summary><b>Google Flights</b></summary>
+
 
 ```ruby
 # Round trip
@@ -305,7 +348,12 @@ response = SearchApi.google_flights.search(
 )
 ```
 
-### Google Hotels
+
+</details>
+
+<details>
+<summary><b>Google Hotels</b></summary>
+
 
 ```ruby
 response = SearchApi.google_hotels.search("hotels in Paris",
@@ -314,7 +362,12 @@ response = SearchApi.google_hotels.search("hotels in Paris",
 )
 ```
 
-### Google Images
+
+</details>
+
+<details>
+<summary><b>Google Images</b></summary>
+
 
 ```ruby
 response = SearchApi.google_images.search("sunset over ocean")
@@ -327,7 +380,12 @@ response = SearchApi.google_images.search("logo design",
 )
 ```
 
-### Google Videos
+
+</details>
+
+<details>
+<summary><b>Google Videos</b></summary>
+
 
 ```ruby
 response = SearchApi.google_videos.search("ruby tutorial")
@@ -339,7 +397,12 @@ response = SearchApi.google_videos.search("cooking pasta",
 )
 ```
 
-### Google Trends
+
+</details>
+
+<details>
+<summary><b>Google Trends</b></summary>
+
 
 ```ruby
 # Interest over time
@@ -361,7 +424,12 @@ response = SearchApi.google_trends.search("web development",
 )
 ```
 
-### Google Jobs
+
+</details>
+
+<details>
+<summary><b>Google Jobs</b></summary>
+
 
 ```ruby
 response = SearchApi.google_jobs.search("software engineer")
@@ -373,7 +441,12 @@ response = SearchApi.google_jobs.search("data scientist",
 )
 ```
 
-### Google Events
+
+</details>
+
+<details>
+<summary><b>Google Events</b></summary>
+
 
 ```ruby
 response = SearchApi.google_events.search("concerts in Austin")
@@ -384,7 +457,12 @@ response = SearchApi.google_events.search("tech conferences",
 )
 ```
 
-### Google Finance
+
+</details>
+
+<details>
+<summary><b>Google Finance</b></summary>
+
 
 ```ruby
 # Stock quote
@@ -397,7 +475,12 @@ response = SearchApi.google_finance.search("AAPL:NASDAQ", window: "1Y")
 response = SearchApi.google_finance.search("BTC-USD")
 ```
 
-### Google Autocomplete
+
+</details>
+
+<details>
+<summary><b>Google Autocomplete</b></summary>
+
 
 ```ruby
 response = SearchApi.google_autocomplete.search("how to learn")
@@ -409,7 +492,12 @@ response = SearchApi.google_autocomplete.search("best restaurants",
 )
 ```
 
-### Google Local
+
+</details>
+
+<details>
+<summary><b>Google Local</b></summary>
+
 
 ```ruby
 response = SearchApi.google_local.search("pizza delivery",
@@ -417,7 +505,12 @@ response = SearchApi.google_local.search("pizza delivery",
 )
 ```
 
-### Google Forums
+
+</details>
+
+<details>
+<summary><b>Google Forums</b></summary>
+
 
 ```ruby
 response = SearchApi.google_forums.search("best ruby gems 2026",
@@ -425,13 +518,23 @@ response = SearchApi.google_forums.search("best ruby gems 2026",
 )
 ```
 
-### Google Shorts
+
+</details>
+
+<details>
+<summary><b>Google Shorts</b></summary>
+
 
 ```ruby
 response = SearchApi.google_shorts.search("funny cats")
 ```
 
-### Google Patents
+
+</details>
+
+<details>
+<summary><b>Google Patents</b></summary>
+
 
 ```ruby
 response = SearchApi.google_patents.search("solar panel efficiency",
@@ -440,7 +543,12 @@ response = SearchApi.google_patents.search("solar panel efficiency",
 )
 ```
 
-### Google Lens
+
+</details>
+
+<details>
+<summary><b>Google Lens</b></summary>
+
 
 ```ruby
 response = SearchApi.google_lens.search(
@@ -449,26 +557,46 @@ response = SearchApi.google_lens.search(
 )
 ```
 
-### Google AI Mode
+
+</details>
+
+<details>
+<summary><b>Google AI Mode</b></summary>
+
 
 ```ruby
 response = SearchApi.google_ai_mode.search("explain quantum computing simply")
 ```
 
-### Google AI Overview
+
+</details>
+
+<details>
+<summary><b>Google AI Overview</b></summary>
+
 
 ```ruby
 # Requires a page_token from a prior Google Search response
 response = SearchApi.google_ai_overview.search(page_token: "token_from_google_search")
 ```
 
-### Google About This Domain
+
+</details>
+
+<details>
+<summary><b>Google About This Domain</b></summary>
+
 
 ```ruby
 response = SearchApi.google_about_this_domain.search(domain: "github.com")
 ```
 
-### Google Ads Transparency Center
+
+</details>
+
+<details>
+<summary><b>Google Ads Transparency Center</b></summary>
+
 
 ```ruby
 # Search by advertiser
@@ -486,7 +614,12 @@ response = SearchApi.google_ads_transparency_center.search(
 )
 ```
 
-### Google Play Store
+
+</details>
+
+<details>
+<summary><b>Google Play Store</b></summary>
+
 
 ```ruby
 # Search apps
@@ -505,7 +638,12 @@ response = SearchApi.google_play_store.books("ruby programming")
 response = SearchApi.google_play_store.search(store: "apps", q: "fitness", gl: "us")
 ```
 
-### YouTube
+
+</details>
+
+<details>
+<summary><b>YouTube</b></summary>
+
 
 ```ruby
 response = SearchApi.youtube.search("ruby on rails tutorial")
@@ -514,7 +652,12 @@ response = SearchApi.youtube.search("ruby on rails tutorial")
 response = SearchApi.youtube.search("cooking", gl: "us", hl: "en")
 ```
 
-### Bing
+
+</details>
+
+<details>
+<summary><b>Bing</b></summary>
+
 
 ```ruby
 response = SearchApi.bing.search("artificial intelligence")
@@ -526,31 +669,56 @@ response = SearchApi.bing.search("web development",
 )
 ```
 
-### Bing Images
+
+</details>
+
+<details>
+<summary><b>Bing Images</b></summary>
+
 
 ```ruby
 response = SearchApi.bing_images.search("mountain landscape", size: "large")
 ```
 
-### Bing Videos
+
+</details>
+
+<details>
+<summary><b>Bing Videos</b></summary>
+
 
 ```ruby
 response = SearchApi.bing_videos.search("cooking tutorial", duration: "short")
 ```
 
-### Baidu
+
+</details>
+
+<details>
+<summary><b>Baidu</b></summary>
+
 
 ```ruby
 response = SearchApi.baidu.search("人工智能", num: 20)
 ```
 
-### Yandex
+
+</details>
+
+<details>
+<summary><b>Yandex</b></summary>
+
 
 ```ruby
 response = SearchApi.yandex.search("programming tutorials", lang: "en")
 ```
 
-### Yandex Reverse Image
+
+</details>
+
+<details>
+<summary><b>Yandex Reverse Image</b></summary>
+
 
 ```ruby
 response = SearchApi.yandex_reverse_image.search(
@@ -558,13 +726,23 @@ response = SearchApi.yandex_reverse_image.search(
 )
 ```
 
-### DuckDuckGo
+
+</details>
+
+<details>
+<summary><b>DuckDuckGo</b></summary>
+
 
 ```ruby
 response = SearchApi.duckduckgo.search("privacy tools", safe: "moderate")
 ```
 
-### Yahoo
+
+</details>
+
+<details>
+<summary><b>Yahoo</b></summary>
+
 
 ```ruby
 response = SearchApi.yahoo.search("weather forecast",
@@ -572,13 +750,23 @@ response = SearchApi.yahoo.search("weather forecast",
 )
 ```
 
-### Naver
+
+</details>
+
+<details>
+<summary><b>Naver</b></summary>
+
 
 ```ruby
 response = SearchApi.naver.search("한국 뉴스", page: 2)
 ```
 
-### Amazon
+
+</details>
+
+<details>
+<summary><b>Amazon</b></summary>
+
 
 ```ruby
 response = SearchApi.amazon_search.search("wireless headphones")
@@ -591,13 +779,23 @@ response = SearchApi.amazon_search.search("organic coffee",
 )
 ```
 
-### Walmart
+
+</details>
+
+<details>
+<summary><b>Walmart</b></summary>
+
 
 ```ruby
 response = SearchApi.walmart_search.search("organic coffee", sort_by: "price_low")
 ```
 
-### eBay
+
+</details>
+
+<details>
+<summary><b>eBay</b></summary>
+
 
 ```ruby
 # Search with query
@@ -614,7 +812,12 @@ response = SearchApi.ebay_search.search("laptop",
 )
 ```
 
-### Shein
+
+</details>
+
+<details>
+<summary><b>Shein</b></summary>
+
 
 ```ruby
 response = SearchApi.shein_search.search("summer dress",
@@ -623,7 +826,12 @@ response = SearchApi.shein_search.search("summer dress",
 )
 ```
 
-### Airbnb
+
+</details>
+
+<details>
+<summary><b>Airbnb</b></summary>
+
 
 ```ruby
 response = SearchApi.airbnb.search("Tulum",
@@ -634,7 +842,12 @@ response = SearchApi.airbnb.search("Tulum",
 )
 ```
 
-### TripAdvisor
+
+</details>
+
+<details>
+<summary><b>TripAdvisor</b></summary>
+
 
 ```ruby
 response = SearchApi.tripadvisor.search("best restaurants in Rome",
@@ -642,7 +855,12 @@ response = SearchApi.tripadvisor.search("best restaurants in Rome",
 )
 ```
 
-### Apple App Store
+
+</details>
+
+<details>
+<summary><b>Apple App Store</b></summary>
+
 
 ```ruby
 response = SearchApi.apple_app_store.search(term: "photo editor",
@@ -651,7 +869,12 @@ response = SearchApi.apple_app_store.search(term: "photo editor",
 )
 ```
 
-### Instagram Profile
+
+</details>
+
+<details>
+<summary><b>Instagram Profile</b></summary>
+
 
 ```ruby
 response = SearchApi.instagram_profile.search(username: "natgeo")
@@ -660,7 +883,12 @@ profile = response.data["profile"]
 posts = response.data["posts"]
 ```
 
-### TikTok Profile
+
+</details>
+
+<details>
+<summary><b>TikTok Profile</b></summary>
+
 
 ```ruby
 response = SearchApi.tiktok_profile.search(username: "tiktok")
@@ -668,7 +896,12 @@ response = SearchApi.tiktok_profile.search(username: "tiktok")
 profile = response.data["profile"]
 ```
 
-### Facebook Business Page
+
+</details>
+
+<details>
+<summary><b>Facebook Business Page</b></summary>
+
 
 ```ruby
 # By username
@@ -681,7 +914,12 @@ response = SearchApi.facebook_business_page.by_page_id("123456789")
 response = SearchApi.facebook_business_page.search(username: "nasa")
 ```
 
-### LinkedIn Ad Library
+
+</details>
+
+<details>
+<summary><b>LinkedIn Ad Library</b></summary>
+
 
 ```ruby
 response = SearchApi.linkedin_ad_library.search(
@@ -690,7 +928,12 @@ response = SearchApi.linkedin_ad_library.search(
 )
 ```
 
-### Reddit Ad Library
+
+</details>
+
+<details>
+<summary><b>Reddit Ad Library</b></summary>
+
 
 ```ruby
 response = SearchApi.reddit_ad_library.search(
@@ -700,7 +943,12 @@ response = SearchApi.reddit_ad_library.search(
 )
 ```
 
-### Meta Ad Library
+
+</details>
+
+<details>
+<summary><b>Meta Ad Library</b></summary>
+
 
 ```ruby
 response = SearchApi.meta_ad_library.search(
@@ -710,7 +958,12 @@ response = SearchApi.meta_ad_library.search(
 )
 ```
 
-### TikTok Ads Library
+
+</details>
+
+<details>
+<summary><b>TikTok Ads Library</b></summary>
+
 
 ```ruby
 response = SearchApi.tiktok_ads_library.search(
@@ -720,6 +973,8 @@ response = SearchApi.tiktok_ads_library.search(
 )
 ```
 
+
+</details>
 ## Response Object
 
 Every API call returns a `SearchApi::Response`:
@@ -790,7 +1045,7 @@ Most Google engines support these shared parameters:
 | `safe` | SafeSearch | `"active"`, `"off"` |
 | `num` | Results per page | `10`, `20`, `100` |
 
-See the [SearchAPI documentation](https://www.searchapi.io/docs) for the full parameter reference of each engine.
+See the [SearchAPI documentation](https://www.searchapi.io) for the full parameter reference of each engine.
 
 ### Zero Retention (Enterprise)
 
