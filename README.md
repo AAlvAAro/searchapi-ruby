@@ -9,7 +9,7 @@
 
 <p align="center">
   <strong>Full-featured Ruby client for <a href="https://www.searchapi.io/">SearchAPI.io</a></strong><br/>
-  Access <b>56 search engines</b> from a single, consistent interface.
+  Access <b>61 search engines</b> from a single, consistent interface.
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@
 - [Supported Engines](#supported-engines)
 - [Usage](#usage)
   <details>
-  <summary>All 56 engines...</summary>
+  <summary>All 61 engines...</summary>
 
   - [Google Search](#google-search)
   - [Google Rank Tracking](#google-rank-tracking)
@@ -57,6 +57,11 @@
   - [Google Ads Transparency Center](#google-ads-transparency-center)
   - [Google Play Store](#google-play-store)
   - [YouTube](#youtube)
+  - [YouTube Transcripts](#youtube-transcripts)
+  - [YouTube Video](#youtube-video)
+  - [YouTube Comments](#youtube-comments)
+  - [YouTube Channel](#youtube-channel)
+  - [YouTube Channel Videos](#youtube-channel-videos)
   - [Bing](#bing)
   - [Bing Images](#bing-images)
   - [Bing Videos](#bing-videos)
@@ -195,6 +200,11 @@ end
 | | Yahoo | `SearchApi.yahoo` |
 | | Naver | `SearchApi.naver` |
 | | YouTube | `SearchApi.youtube` |
+| | YouTube Transcripts | `SearchApi.youtube_transcripts` |
+| | YouTube Video | `SearchApi.youtube_video` |
+| | YouTube Comments | `SearchApi.youtube_comments` |
+| | YouTube Channel | `SearchApi.youtube_channel` |
+| | YouTube Channel Videos | `SearchApi.youtube_channel_videos` |
 | **E-commerce** | Amazon | `SearchApi.amazon_search` |
 | | Walmart | `SearchApi.walmart_search` |
 | | eBay | `SearchApi.ebay_search` |
@@ -707,6 +717,82 @@ response = SearchApi.youtube.search("ruby on rails tutorial")
 
 # With parameters
 response = SearchApi.youtube.search("cooking", gl: "us", hl: "en")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Transcripts</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_transcripts.search(video_id: "dQw4w9WgXcQ")
+
+# In a specific language
+response = SearchApi.youtube_transcripts.search(video_id: "dQw4w9WgXcQ", lang: "es")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Video</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_video.search(video_id: "dQw4w9WgXcQ")
+
+# With localization
+response = SearchApi.youtube_video.search(video_id: "dQw4w9WgXcQ", gl: "us", hl: "en")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Comments</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_comments.search(video_id: "dQw4w9WgXcQ")
+
+# Paginate through comments
+response = SearchApi.youtube_comments.search(
+  video_id: "dQw4w9WgXcQ",
+  next_page_token: response.data["pagination"]["next_page_token"]
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Channel</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_channel.search(channel_id: "UCxxxxxx")
+
+# With localization
+response = SearchApi.youtube_channel.search(channel_id: "UCxxxxxx", gl: "us", hl: "en")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Channel Videos</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_channel_videos.search(channel_id: "UCxxxxxx")
+
+# Paginate through videos
+response = SearchApi.youtube_channel_videos.search(
+  channel_id: "UCxxxxxx",
+  next_page_token: response.data["pagination"]["next_page_token"]
+)
 ```
 
 

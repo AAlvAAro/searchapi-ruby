@@ -48,6 +48,11 @@ require_relative "searchapi/resources/duckduckgo"
 require_relative "searchapi/resources/yahoo"
 require_relative "searchapi/resources/naver"
 require_relative "searchapi/resources/youtube"
+require_relative "searchapi/resources/youtube_transcripts"
+require_relative "searchapi/resources/youtube_video"
+require_relative "searchapi/resources/youtube_comments"
+require_relative "searchapi/resources/youtube_channel"
+require_relative "searchapi/resources/youtube_channel_videos"
 
 # App stores
 require_relative "searchapi/resources/apple_app_store"
@@ -121,6 +126,11 @@ module SearchApi
     yahoo: Resources::Yahoo,
     naver: Resources::Naver,
     youtube: Resources::YouTube,
+    youtube_transcripts: Resources::YouTubeTranscripts,
+    youtube_video: Resources::YouTubeVideo,
+    youtube_comments: Resources::YouTubeComments,
+    youtube_channel: Resources::YouTubeChannel,
+    youtube_channel_videos: Resources::YouTubeChannelVideos,
 
     # App stores
     apple_app_store: Resources::AppleAppStore,
