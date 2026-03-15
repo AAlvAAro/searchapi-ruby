@@ -12,6 +12,8 @@ require_relative "searchapi/resources/google"
 require_relative "searchapi/resources/google_rank_tracking"
 require_relative "searchapi/resources/google_events"
 require_relative "searchapi/resources/google_maps"
+require_relative "searchapi/resources/google_maps_place"
+require_relative "searchapi/resources/google_maps_reviews"
 require_relative "searchapi/resources/google_scholar"
 require_relative "searchapi/resources/google_news"
 require_relative "searchapi/resources/google_jobs"
@@ -78,6 +80,8 @@ module SearchApi
     google_rank_tracking: Resources::GoogleRankTracking,
     google_events: Resources::GoogleEvents,
     google_maps: Resources::GoogleMaps,
+    google_maps_place: Resources::GoogleMapsPlace,
+    google_maps_reviews: Resources::GoogleMapsReviews,
     google_scholar: Resources::GoogleScholar,
     google_news: Resources::GoogleNews,
     google_jobs: Resources::GoogleJobs,
