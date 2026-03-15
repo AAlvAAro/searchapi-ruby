@@ -64,8 +64,8 @@ RSpec.describe SearchApi do
   end
 
   describe "RESOURCES" do
-    it "contains 51 registered engines" do
-      expect(described_class::RESOURCES.size).to eq(51)
+    it "contains 53 registered engines" do
+      expect(described_class::RESOURCES.size).to eq(53)
     end
 
     it "maps symbols to Resource subclasses" do

@@ -9,7 +9,7 @@
 
 <p align="center">
   <strong>Full-featured Ruby client for <a href="https://www.searchapi.io/">SearchAPI.io</a></strong><br/>
-  Access <b>49 search engines</b> from a single, consistent interface.
+  Access <b>53 search engines</b> from a single, consistent interface.
 </p>
 
 <p align="center">
@@ -27,11 +27,13 @@
 - [Supported Engines](#supported-engines)
 - [Usage](#usage)
   <details>
-  <summary>All 49 engines...</summary>
+  <summary>All 53 engines...</summary>
 
   - [Google Search](#google-search)
   - [Google Rank Tracking](#google-rank-tracking)
   - [Google Maps](#google-maps)
+  - [Google Maps Place](#google-maps-place)
+  - [Google Maps Reviews](#google-maps-reviews)
   - [Google News](#google-news)
   - [Google Scholar](#google-scholar)
   - [Google Shopping](#google-shopping)
@@ -69,6 +71,8 @@
   - [eBay](#ebay)
   - [Shein](#shein)
   - [Airbnb](#airbnb)
+  - [Airbnb Property](#airbnb-property)
+  - [Airbnb Property Reviews](#airbnb-property-reviews)
   - [TripAdvisor](#tripadvisor)
   - [Apple App Store](#apple-app-store)
   - [Instagram Profile](#instagram-profile)
@@ -147,13 +151,15 @@ end
 ## Supported Engines
 
 <details>
-<summary><b>View all 49 supported engines</b></summary>
+<summary><b>View all 53 supported engines</b></summary>
 
 | Category | Engine | Accessor |
 |----------|--------|----------|
 | **Google** | Google Search | `SearchApi.google` |
 | | Google Rank Tracking | `SearchApi.google_rank_tracking` |
 | | Google Maps | `SearchApi.google_maps` |
+| | Google Maps Place | `SearchApi.google_maps_place` |
+| | Google Maps Reviews | `SearchApi.google_maps_reviews` |
 | | Google Local | `SearchApi.google_local` |
 | | Google News | `SearchApi.google_news` |
 | | Google Scholar | `SearchApi.google_scholar` |
@@ -191,6 +197,8 @@ end
 | | eBay | `SearchApi.ebay_search` |
 | | Shein | `SearchApi.shein_search` |
 | **Travel** | Airbnb | `SearchApi.airbnb` |
+| | Airbnb Property | `SearchApi.airbnb_property` |
+| | Airbnb Property Reviews | `SearchApi.airbnb_property_reviews` |
 | | TripAdvisor | `SearchApi.tripadvisor` |
 | **App Stores** | Apple App Store | `SearchApi.apple_app_store` |
 | **Social Media** | Instagram Profile | `SearchApi.instagram_profile` |
@@ -262,6 +270,49 @@ response = SearchApi.google_maps.place(data_id: "0x60188b857...")
 response = SearchApi.google_maps.directions(
   start: "Tokyo Station",
   destination: "Shibuya Station"
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>Google Maps Place</b></summary>
+
+
+```ruby
+# By data_id
+response = SearchApi.google_maps_place.search(data_id: "0x60188b857...")
+
+# By place_id
+response = SearchApi.google_maps_place.search(place_id: "ChIJN1t_tDeuEmsRUsoyG83frY4")
+
+# With localization
+response = SearchApi.google_maps_place.search(data_id: "0x60188b857...", hl: "es", gl: "mx")
+```
+
+
+</details>
+
+<details>
+<summary><b>Google Maps Reviews</b></summary>
+
+
+```ruby
+# Basic reviews
+response = SearchApi.google_maps_reviews.search(data_id: "0x60188b857...")
+
+# With sorting and pagination
+response = SearchApi.google_maps_reviews.search(
+  data_id: "0x60188b857...",
+  sort_by: "newest",
+  num: 20
+)
+
+# Paginate through results
+response = SearchApi.google_maps_reviews.search(
+  data_id: "0x60188b857...",
+  next_page_token: response.data["serpapi_pagination"]["next_page_token"]
 )
 ```
 

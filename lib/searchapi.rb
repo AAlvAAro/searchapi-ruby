@@ -59,6 +59,8 @@ require_relative "searchapi/resources/ebay_search"
 
 # Travel & hospitality
 require_relative "searchapi/resources/airbnb"
+require_relative "searchapi/resources/airbnb_property"
+require_relative "searchapi/resources/airbnb_property_reviews"
 require_relative "searchapi/resources/tripadvisor"
 
 # Social media profiles
@@ -127,6 +129,8 @@ module SearchApi
 
     # Travel & hospitality
     airbnb: Resources::Airbnb,
+    airbnb_property: Resources::AirbnbProperty,
+    airbnb_property_reviews: Resources::AirbnbPropertyReviews,
     tripadvisor: Resources::TripAdvisor,
 
     # Social media profiles
