@@ -72,6 +72,9 @@ require_relative "searchapi/resources/facebook_business_page"
 require_relative "searchapi/resources/linkedin_ad_library"
 require_relative "searchapi/resources/reddit_ad_library"
 require_relative "searchapi/resources/meta_ad_library"
+require_relative "searchapi/resources/meta_ad_library_page_search"
+require_relative "searchapi/resources/meta_ad_library_ad_details"
+require_relative "searchapi/resources/meta_ad_library_page_info"
 require_relative "searchapi/resources/tiktok_ads_library"
 
 module SearchApi
@@ -142,6 +145,9 @@ module SearchApi
     linkedin_ad_library: Resources::LinkedinAdLibrary,
     reddit_ad_library: Resources::RedditAdLibrary,
     meta_ad_library: Resources::MetaAdLibrary,
+    meta_ad_library_page_search: Resources::MetaAdLibraryPageSearch,
+    meta_ad_library_ad_details: Resources::MetaAdLibraryAdDetails,
+    meta_ad_library_page_info: Resources::MetaAdLibraryPageInfo,
     tiktok_ads_library: Resources::TiktokAdsLibrary
   }.freeze
 

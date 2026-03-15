@@ -9,7 +9,7 @@
 
 <p align="center">
   <strong>Full-featured Ruby client for <a href="https://www.searchapi.io/">SearchAPI.io</a></strong><br/>
-  Access <b>53 search engines</b> from a single, consistent interface.
+  Access <b>56 search engines</b> from a single, consistent interface.
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@
 - [Supported Engines](#supported-engines)
 - [Usage](#usage)
   <details>
-  <summary>All 53 engines...</summary>
+  <summary>All 56 engines...</summary>
 
   - [Google Search](#google-search)
   - [Google Rank Tracking](#google-rank-tracking)
@@ -81,6 +81,9 @@
   - [LinkedIn Ad Library](#linkedin-ad-library)
   - [Reddit Ad Library](#reddit-ad-library)
   - [Meta Ad Library](#meta-ad-library)
+  - [Meta Ad Library Page Search](#meta-ad-library-page-search)
+  - [Meta Ad Library Ad Details](#meta-ad-library-ad-details)
+  - [Meta Ad Library Page Info](#meta-ad-library-page-info)
   - [TikTok Ads Library](#tiktok-ads-library)
 
   </details>
@@ -151,7 +154,7 @@ end
 ## Supported Engines
 
 <details>
-<summary><b>View all 53 supported engines</b></summary>
+<summary><b>View all 56 supported engines</b></summary>
 
 | Category | Engine | Accessor |
 |----------|--------|----------|
@@ -207,6 +210,9 @@ end
 | **Ad Libraries** | LinkedIn Ad Library | `SearchApi.linkedin_ad_library` |
 | | Reddit Ad Library | `SearchApi.reddit_ad_library` |
 | | Meta Ad Library | `SearchApi.meta_ad_library` |
+| | Meta Ad Library Page Search | `SearchApi.meta_ad_library_page_search` |
+| | Meta Ad Library Ad Details | `SearchApi.meta_ad_library_ad_details` |
+| | Meta Ad Library Page Info | `SearchApi.meta_ad_library_page_info` |
 | | TikTok Ads Library | `SearchApi.tiktok_ads_library` |
 
 </details>
@@ -897,6 +903,47 @@ response = SearchApi.airbnb.search("Tulum",
 </details>
 
 <details>
+<summary><b>Airbnb Property</b></summary>
+
+
+```ruby
+# By property ID
+response = SearchApi.airbnb_property.search(property_id: "12345678")
+
+# With dates and guests
+response = SearchApi.airbnb_property.search(
+  property_id: "12345678",
+  check_in_date: "2026-06-15",
+  check_out_date: "2026-06-22",
+  adults: 2
+)
+
+# By booking token
+response = SearchApi.airbnb_property.search(booking_token: "token_from_search_result")
+```
+
+
+</details>
+
+<details>
+<summary><b>Airbnb Property Reviews</b></summary>
+
+
+```ruby
+response = SearchApi.airbnb_property_reviews.search(property_id: "12345678")
+
+# With sorting and pagination
+response = SearchApi.airbnb_property_reviews.search(
+  property_id: "12345678",
+  sort_by: "most_recent",
+  page: 2
+)
+```
+
+
+</details>
+
+<details>
 <summary><b>TripAdvisor</b></summary>
 
 
@@ -1007,6 +1054,55 @@ response = SearchApi.meta_ad_library.search(
   active_status: "active",
   platforms: "instagram"
 )
+```
+
+
+</details>
+
+<details>
+<summary><b>Meta Ad Library Page Search</b></summary>
+
+
+```ruby
+# Search for advertiser pages
+response = SearchApi.meta_ad_library_page_search.search(q: "Nike")
+
+# With filters
+response = SearchApi.meta_ad_library_page_search.search(
+  q: "Nike",
+  country: "US",
+  ad_type: "political"
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>Meta Ad Library Ad Details</b></summary>
+
+
+```ruby
+response = SearchApi.meta_ad_library_ad_details.search(ad_archive_id: "123456789")
+
+# Political ad with regional transparency data
+response = SearchApi.meta_ad_library_ad_details.search(
+  ad_archive_id: "123456789",
+  is_political: true,
+  country: "US",
+  page_id: "987654321"
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>Meta Ad Library Page Info</b></summary>
+
+
+```ruby
+response = SearchApi.meta_ad_library_page_info.search(page_id: "123456789")
 ```
 
 
