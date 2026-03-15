@@ -35,6 +35,7 @@ require_relative "searchapi/resources/google_forums"
 require_relative "searchapi/resources/google_patents"
 require_relative "searchapi/resources/google_ai_overview"
 require_relative "searchapi/resources/google_play_store"
+require_relative "searchapi/resources/google_locations"
 
 # Other search engines
 require_relative "searchapi/resources/amazon_search"
@@ -81,6 +82,7 @@ require_relative "searchapi/resources/meta_ad_library_page_search"
 require_relative "searchapi/resources/meta_ad_library_ad_details"
 require_relative "searchapi/resources/meta_ad_library_page_info"
 require_relative "searchapi/resources/tiktok_ads_library"
+require_relative "searchapi/resources/tiktok_ads_library_advertiser_search"
 
 module SearchApi
   # Registry mapping accessor names to resource classes.
@@ -113,6 +115,7 @@ module SearchApi
     google_patents: Resources::GooglePatents,
     google_ai_overview: Resources::GoogleAiOverview,
     google_play_store: Resources::GooglePlayStore,
+    google_locations: Resources::GoogleLocations,
 
     # Other search engines
     amazon_search: Resources::AmazonSearch,
@@ -158,7 +161,8 @@ module SearchApi
     meta_ad_library_page_search: Resources::MetaAdLibraryPageSearch,
     meta_ad_library_ad_details: Resources::MetaAdLibraryAdDetails,
     meta_ad_library_page_info: Resources::MetaAdLibraryPageInfo,
-    tiktok_ads_library: Resources::TiktokAdsLibrary
+    tiktok_ads_library: Resources::TiktokAdsLibrary,
+    tiktok_ads_library_advertiser_search: Resources::TiktokAdsLibraryAdvertiserSearch
   }.freeze
 
   class << self

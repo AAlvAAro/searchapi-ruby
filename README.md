@@ -9,7 +9,7 @@
 
 <p align="center">
   <strong>Full-featured Ruby client for <a href="https://www.searchapi.io/">SearchAPI.io</a></strong><br/>
-  Access <b>61 search engines</b> from a single, consistent interface.
+  Access <b>63 search engines</b> from a single, consistent interface.
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@
 - [Supported Engines](#supported-engines)
 - [Usage](#usage)
   <details>
-  <summary>All 61 engines...</summary>
+  <summary>All 63 engines...</summary>
 
   - [Google Search](#google-search)
   - [Google Rank Tracking](#google-rank-tracking)
@@ -56,6 +56,7 @@
   - [Google About This Domain](#google-about-this-domain)
   - [Google Ads Transparency Center](#google-ads-transparency-center)
   - [Google Play Store](#google-play-store)
+  - [Google Locations](#google-locations)
   - [YouTube](#youtube)
   - [YouTube Transcripts](#youtube-transcripts)
   - [YouTube Video](#youtube-video)
@@ -90,8 +91,9 @@
   - [Meta Ad Library Ad Details](#meta-ad-library-ad-details)
   - [Meta Ad Library Page Info](#meta-ad-library-page-info)
   - [TikTok Ads Library](#tiktok-ads-library)
+  - [TikTok Ads Library Advertiser Search](#tiktok-ads-library-advertiser-search)
 
-  </details>
+</details>
 - [Response Object](#response-object)
 - [Error Handling](#error-handling)
 - [Advanced Usage](#advanced-usage)
@@ -190,6 +192,7 @@ end
 | | Google About This Domain | `SearchApi.google_about_this_domain` |
 | | Google Ads Transparency | `SearchApi.google_ads_transparency_center` |
 | | Google Play Store | `SearchApi.google_play_store` |
+| | Google Locations | `SearchApi.google_locations` |
 | **Other Search Engines** | Bing | `SearchApi.bing` |
 | | Bing Images | `SearchApi.bing_images` |
 | | Bing Videos | `SearchApi.bing_videos` |
@@ -224,6 +227,7 @@ end
 | | Meta Ad Library Ad Details | `SearchApi.meta_ad_library_ad_details` |
 | | Meta Ad Library Page Info | `SearchApi.meta_ad_library_page_info` |
 | | TikTok Ads Library | `SearchApi.tiktok_ads_library` |
+| | TikTok Ads Library Advertiser Search | `SearchApi.tiktok_ads_library_advertiser_search` |
 
 </details>
 
@@ -703,6 +707,21 @@ response = SearchApi.google_play_store.books("ruby programming")
 
 # Direct search with store parameter
 response = SearchApi.google_play_store.search(store: "apps", q: "fitness", gl: "us")
+```
+
+
+</details>
+
+<details>
+<summary><b>Google Locations</b></summary>
+
+
+```ruby
+# Find geo-targeting locations for use with other Google engines
+response = SearchApi.google_locations.search(q: "new york")
+
+# Limit results
+response = SearchApi.google_locations.search(q: "london", limit: 5)
 ```
 
 
@@ -1208,6 +1227,17 @@ response = SearchApi.tiktok_ads_library.search(
 
 
 </details>
+<details>
+<summary><b>TikTok Ads Library Advertiser Search</b></summary>
+
+
+```ruby
+response = SearchApi.tiktok_ads_library_advertiser_search.search(q: "Nike")
+```
+
+
+</details>
+
 ## Response Object
 
 Every API call returns a `SearchApi::Response`:
