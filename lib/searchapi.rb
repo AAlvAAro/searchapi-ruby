@@ -12,6 +12,8 @@ require_relative "searchapi/resources/google"
 require_relative "searchapi/resources/google_rank_tracking"
 require_relative "searchapi/resources/google_events"
 require_relative "searchapi/resources/google_maps"
+require_relative "searchapi/resources/google_maps_place"
+require_relative "searchapi/resources/google_maps_reviews"
 require_relative "searchapi/resources/google_scholar"
 require_relative "searchapi/resources/google_news"
 require_relative "searchapi/resources/google_jobs"
@@ -33,6 +35,7 @@ require_relative "searchapi/resources/google_forums"
 require_relative "searchapi/resources/google_patents"
 require_relative "searchapi/resources/google_ai_overview"
 require_relative "searchapi/resources/google_play_store"
+require_relative "searchapi/resources/google_locations"
 
 # Other search engines
 require_relative "searchapi/resources/amazon_search"
@@ -46,6 +49,11 @@ require_relative "searchapi/resources/duckduckgo"
 require_relative "searchapi/resources/yahoo"
 require_relative "searchapi/resources/naver"
 require_relative "searchapi/resources/youtube"
+require_relative "searchapi/resources/youtube_transcripts"
+require_relative "searchapi/resources/youtube_video"
+require_relative "searchapi/resources/youtube_comments"
+require_relative "searchapi/resources/youtube_channel"
+require_relative "searchapi/resources/youtube_channel_videos"
 
 # App stores
 require_relative "searchapi/resources/apple_app_store"
@@ -57,6 +65,8 @@ require_relative "searchapi/resources/ebay_search"
 
 # Travel & hospitality
 require_relative "searchapi/resources/airbnb"
+require_relative "searchapi/resources/airbnb_property"
+require_relative "searchapi/resources/airbnb_property_reviews"
 require_relative "searchapi/resources/tripadvisor"
 
 # Social media profiles
@@ -68,7 +78,11 @@ require_relative "searchapi/resources/facebook_business_page"
 require_relative "searchapi/resources/linkedin_ad_library"
 require_relative "searchapi/resources/reddit_ad_library"
 require_relative "searchapi/resources/meta_ad_library"
+require_relative "searchapi/resources/meta_ad_library_page_search"
+require_relative "searchapi/resources/meta_ad_library_ad_details"
+require_relative "searchapi/resources/meta_ad_library_page_info"
 require_relative "searchapi/resources/tiktok_ads_library"
+require_relative "searchapi/resources/tiktok_ads_library_advertiser_search"
 
 module SearchApi
   # Registry mapping accessor names to resource classes.
@@ -78,6 +92,8 @@ module SearchApi
     google_rank_tracking: Resources::GoogleRankTracking,
     google_events: Resources::GoogleEvents,
     google_maps: Resources::GoogleMaps,
+    google_maps_place: Resources::GoogleMapsPlace,
+    google_maps_reviews: Resources::GoogleMapsReviews,
     google_scholar: Resources::GoogleScholar,
     google_news: Resources::GoogleNews,
     google_jobs: Resources::GoogleJobs,
@@ -99,6 +115,7 @@ module SearchApi
     google_patents: Resources::GooglePatents,
     google_ai_overview: Resources::GoogleAiOverview,
     google_play_store: Resources::GooglePlayStore,
+    google_locations: Resources::GoogleLocations,
 
     # Other search engines
     amazon_search: Resources::AmazonSearch,
@@ -112,6 +129,11 @@ module SearchApi
     yahoo: Resources::Yahoo,
     naver: Resources::Naver,
     youtube: Resources::YouTube,
+    youtube_transcripts: Resources::YouTubeTranscripts,
+    youtube_video: Resources::YouTubeVideo,
+    youtube_comments: Resources::YouTubeComments,
+    youtube_channel: Resources::YouTubeChannel,
+    youtube_channel_videos: Resources::YouTubeChannelVideos,
 
     # App stores
     apple_app_store: Resources::AppleAppStore,
@@ -123,6 +145,8 @@ module SearchApi
 
     # Travel & hospitality
     airbnb: Resources::Airbnb,
+    airbnb_property: Resources::AirbnbProperty,
+    airbnb_property_reviews: Resources::AirbnbPropertyReviews,
     tripadvisor: Resources::TripAdvisor,
 
     # Social media profiles
@@ -134,7 +158,11 @@ module SearchApi
     linkedin_ad_library: Resources::LinkedinAdLibrary,
     reddit_ad_library: Resources::RedditAdLibrary,
     meta_ad_library: Resources::MetaAdLibrary,
-    tiktok_ads_library: Resources::TiktokAdsLibrary
+    meta_ad_library_page_search: Resources::MetaAdLibraryPageSearch,
+    meta_ad_library_ad_details: Resources::MetaAdLibraryAdDetails,
+    meta_ad_library_page_info: Resources::MetaAdLibraryPageInfo,
+    tiktok_ads_library: Resources::TiktokAdsLibrary,
+    tiktok_ads_library_advertiser_search: Resources::TiktokAdsLibraryAdvertiserSearch
   }.freeze
 
   class << self

@@ -9,7 +9,7 @@
 
 <p align="center">
   <strong>Full-featured Ruby client for <a href="https://www.searchapi.io/">SearchAPI.io</a></strong><br/>
-  Access <b>49 search engines</b> from a single, consistent interface.
+  Access <b>63 search engines</b> from a single, consistent interface.
 </p>
 
 <p align="center">
@@ -27,11 +27,13 @@
 - [Supported Engines](#supported-engines)
 - [Usage](#usage)
   <details>
-  <summary>All 49 engines...</summary>
+  <summary>All 63 engines...</summary>
 
   - [Google Search](#google-search)
   - [Google Rank Tracking](#google-rank-tracking)
   - [Google Maps](#google-maps)
+  - [Google Maps Place](#google-maps-place)
+  - [Google Maps Reviews](#google-maps-reviews)
   - [Google News](#google-news)
   - [Google Scholar](#google-scholar)
   - [Google Shopping](#google-shopping)
@@ -54,7 +56,13 @@
   - [Google About This Domain](#google-about-this-domain)
   - [Google Ads Transparency Center](#google-ads-transparency-center)
   - [Google Play Store](#google-play-store)
+  - [Google Locations](#google-locations)
   - [YouTube](#youtube)
+  - [YouTube Transcripts](#youtube-transcripts)
+  - [YouTube Video](#youtube-video)
+  - [YouTube Comments](#youtube-comments)
+  - [YouTube Channel](#youtube-channel)
+  - [YouTube Channel Videos](#youtube-channel-videos)
   - [Bing](#bing)
   - [Bing Images](#bing-images)
   - [Bing Videos](#bing-videos)
@@ -69,6 +77,8 @@
   - [eBay](#ebay)
   - [Shein](#shein)
   - [Airbnb](#airbnb)
+  - [Airbnb Property](#airbnb-property)
+  - [Airbnb Property Reviews](#airbnb-property-reviews)
   - [TripAdvisor](#tripadvisor)
   - [Apple App Store](#apple-app-store)
   - [Instagram Profile](#instagram-profile)
@@ -77,9 +87,13 @@
   - [LinkedIn Ad Library](#linkedin-ad-library)
   - [Reddit Ad Library](#reddit-ad-library)
   - [Meta Ad Library](#meta-ad-library)
+  - [Meta Ad Library Page Search](#meta-ad-library-page-search)
+  - [Meta Ad Library Ad Details](#meta-ad-library-ad-details)
+  - [Meta Ad Library Page Info](#meta-ad-library-page-info)
   - [TikTok Ads Library](#tiktok-ads-library)
+  - [TikTok Ads Library Advertiser Search](#tiktok-ads-library-advertiser-search)
 
-  </details>
+</details>
 - [Response Object](#response-object)
 - [Error Handling](#error-handling)
 - [Advanced Usage](#advanced-usage)
@@ -147,13 +161,15 @@ end
 ## Supported Engines
 
 <details>
-<summary><b>View all 49 supported engines</b></summary>
+<summary><b>View all 63 supported engines</b></summary>
 
 | Category | Engine | Accessor |
 |----------|--------|----------|
 | **Google** | Google Search | `SearchApi.google` |
 | | Google Rank Tracking | `SearchApi.google_rank_tracking` |
 | | Google Maps | `SearchApi.google_maps` |
+| | Google Maps Place | `SearchApi.google_maps_place` |
+| | Google Maps Reviews | `SearchApi.google_maps_reviews` |
 | | Google Local | `SearchApi.google_local` |
 | | Google News | `SearchApi.google_news` |
 | | Google Scholar | `SearchApi.google_scholar` |
@@ -176,6 +192,7 @@ end
 | | Google About This Domain | `SearchApi.google_about_this_domain` |
 | | Google Ads Transparency | `SearchApi.google_ads_transparency_center` |
 | | Google Play Store | `SearchApi.google_play_store` |
+| | Google Locations | `SearchApi.google_locations` |
 | **Other Search Engines** | Bing | `SearchApi.bing` |
 | | Bing Images | `SearchApi.bing_images` |
 | | Bing Videos | `SearchApi.bing_videos` |
@@ -186,11 +203,18 @@ end
 | | Yahoo | `SearchApi.yahoo` |
 | | Naver | `SearchApi.naver` |
 | | YouTube | `SearchApi.youtube` |
+| | YouTube Transcripts | `SearchApi.youtube_transcripts` |
+| | YouTube Video | `SearchApi.youtube_video` |
+| | YouTube Comments | `SearchApi.youtube_comments` |
+| | YouTube Channel | `SearchApi.youtube_channel` |
+| | YouTube Channel Videos | `SearchApi.youtube_channel_videos` |
 | **E-commerce** | Amazon | `SearchApi.amazon_search` |
 | | Walmart | `SearchApi.walmart_search` |
 | | eBay | `SearchApi.ebay_search` |
 | | Shein | `SearchApi.shein_search` |
 | **Travel** | Airbnb | `SearchApi.airbnb` |
+| | Airbnb Property | `SearchApi.airbnb_property` |
+| | Airbnb Property Reviews | `SearchApi.airbnb_property_reviews` |
 | | TripAdvisor | `SearchApi.tripadvisor` |
 | **App Stores** | Apple App Store | `SearchApi.apple_app_store` |
 | **Social Media** | Instagram Profile | `SearchApi.instagram_profile` |
@@ -199,7 +223,11 @@ end
 | **Ad Libraries** | LinkedIn Ad Library | `SearchApi.linkedin_ad_library` |
 | | Reddit Ad Library | `SearchApi.reddit_ad_library` |
 | | Meta Ad Library | `SearchApi.meta_ad_library` |
+| | Meta Ad Library Page Search | `SearchApi.meta_ad_library_page_search` |
+| | Meta Ad Library Ad Details | `SearchApi.meta_ad_library_ad_details` |
+| | Meta Ad Library Page Info | `SearchApi.meta_ad_library_page_info` |
 | | TikTok Ads Library | `SearchApi.tiktok_ads_library` |
+| | TikTok Ads Library Advertiser Search | `SearchApi.tiktok_ads_library_advertiser_search` |
 
 </details>
 
@@ -262,6 +290,49 @@ response = SearchApi.google_maps.place(data_id: "0x60188b857...")
 response = SearchApi.google_maps.directions(
   start: "Tokyo Station",
   destination: "Shibuya Station"
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>Google Maps Place</b></summary>
+
+
+```ruby
+# By data_id
+response = SearchApi.google_maps_place.search(data_id: "0x60188b857...")
+
+# By place_id
+response = SearchApi.google_maps_place.search(place_id: "ChIJN1t_tDeuEmsRUsoyG83frY4")
+
+# With localization
+response = SearchApi.google_maps_place.search(data_id: "0x60188b857...", hl: "es", gl: "mx")
+```
+
+
+</details>
+
+<details>
+<summary><b>Google Maps Reviews</b></summary>
+
+
+```ruby
+# Basic reviews
+response = SearchApi.google_maps_reviews.search(data_id: "0x60188b857...")
+
+# With sorting and pagination
+response = SearchApi.google_maps_reviews.search(
+  data_id: "0x60188b857...",
+  sort_by: "newest",
+  num: 20
+)
+
+# Paginate through results
+response = SearchApi.google_maps_reviews.search(
+  data_id: "0x60188b857...",
+  next_page_token: response.data["serpapi_pagination"]["next_page_token"]
 )
 ```
 
@@ -642,6 +713,21 @@ response = SearchApi.google_play_store.search(store: "apps", q: "fitness", gl: "
 </details>
 
 <details>
+<summary><b>Google Locations</b></summary>
+
+
+```ruby
+# Find geo-targeting locations for use with other Google engines
+response = SearchApi.google_locations.search(q: "new york")
+
+# Limit results
+response = SearchApi.google_locations.search(q: "london", limit: 5)
+```
+
+
+</details>
+
+<details>
 <summary><b>YouTube</b></summary>
 
 
@@ -650,6 +736,82 @@ response = SearchApi.youtube.search("ruby on rails tutorial")
 
 # With parameters
 response = SearchApi.youtube.search("cooking", gl: "us", hl: "en")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Transcripts</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_transcripts.search(video_id: "dQw4w9WgXcQ")
+
+# In a specific language
+response = SearchApi.youtube_transcripts.search(video_id: "dQw4w9WgXcQ", lang: "es")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Video</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_video.search(video_id: "dQw4w9WgXcQ")
+
+# With localization
+response = SearchApi.youtube_video.search(video_id: "dQw4w9WgXcQ", gl: "us", hl: "en")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Comments</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_comments.search(video_id: "dQw4w9WgXcQ")
+
+# Paginate through comments
+response = SearchApi.youtube_comments.search(
+  video_id: "dQw4w9WgXcQ",
+  next_page_token: response.data["pagination"]["next_page_token"]
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Channel</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_channel.search(channel_id: "UCxxxxxx")
+
+# With localization
+response = SearchApi.youtube_channel.search(channel_id: "UCxxxxxx", gl: "us", hl: "en")
+```
+
+
+</details>
+
+<details>
+<summary><b>YouTube Channel Videos</b></summary>
+
+
+```ruby
+response = SearchApi.youtube_channel_videos.search(channel_id: "UCxxxxxx")
+
+# Paginate through videos
+response = SearchApi.youtube_channel_videos.search(
+  channel_id: "UCxxxxxx",
+  next_page_token: response.data["pagination"]["next_page_token"]
+)
 ```
 
 
@@ -846,6 +1008,47 @@ response = SearchApi.airbnb.search("Tulum",
 </details>
 
 <details>
+<summary><b>Airbnb Property</b></summary>
+
+
+```ruby
+# By property ID
+response = SearchApi.airbnb_property.search(property_id: "12345678")
+
+# With dates and guests
+response = SearchApi.airbnb_property.search(
+  property_id: "12345678",
+  check_in_date: "2026-06-15",
+  check_out_date: "2026-06-22",
+  adults: 2
+)
+
+# By booking token
+response = SearchApi.airbnb_property.search(booking_token: "token_from_search_result")
+```
+
+
+</details>
+
+<details>
+<summary><b>Airbnb Property Reviews</b></summary>
+
+
+```ruby
+response = SearchApi.airbnb_property_reviews.search(property_id: "12345678")
+
+# With sorting and pagination
+response = SearchApi.airbnb_property_reviews.search(
+  property_id: "12345678",
+  sort_by: "most_recent",
+  page: 2
+)
+```
+
+
+</details>
+
+<details>
 <summary><b>TripAdvisor</b></summary>
 
 
@@ -962,6 +1165,55 @@ response = SearchApi.meta_ad_library.search(
 </details>
 
 <details>
+<summary><b>Meta Ad Library Page Search</b></summary>
+
+
+```ruby
+# Search for advertiser pages
+response = SearchApi.meta_ad_library_page_search.search(q: "Nike")
+
+# With filters
+response = SearchApi.meta_ad_library_page_search.search(
+  q: "Nike",
+  country: "US",
+  ad_type: "political"
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>Meta Ad Library Ad Details</b></summary>
+
+
+```ruby
+response = SearchApi.meta_ad_library_ad_details.search(ad_archive_id: "123456789")
+
+# Political ad with regional transparency data
+response = SearchApi.meta_ad_library_ad_details.search(
+  ad_archive_id: "123456789",
+  is_political: true,
+  country: "US",
+  page_id: "987654321"
+)
+```
+
+
+</details>
+
+<details>
+<summary><b>Meta Ad Library Page Info</b></summary>
+
+
+```ruby
+response = SearchApi.meta_ad_library_page_info.search(page_id: "123456789")
+```
+
+
+</details>
+
+<details>
 <summary><b>TikTok Ads Library</b></summary>
 
 
@@ -975,6 +1227,17 @@ response = SearchApi.tiktok_ads_library.search(
 
 
 </details>
+<details>
+<summary><b>TikTok Ads Library Advertiser Search</b></summary>
+
+
+```ruby
+response = SearchApi.tiktok_ads_library_advertiser_search.search(q: "Nike")
+```
+
+
+</details>
+
 ## Response Object
 
 Every API call returns a `SearchApi::Response`:

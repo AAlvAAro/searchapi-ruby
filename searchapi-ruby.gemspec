@@ -6,10 +6,10 @@ Gem::Specification.new do |spec|
   spec.name          = "searchapi-ruby"
   spec.version       = SearchApi::VERSION
   spec.authors       = ["aalvaaro"]
-  spec.email         = [""]
+  spec.email         = ["hola@alvarodelgado.dev"]
 
-  spec.summary       = "Ruby client for SearchAPI.io - 49 search engines in one gem"
-  spec.description   = "Full-featured Ruby client for SearchAPI.io. Access 49 search engines including Google, Bing, Baidu, Yandex, DuckDuckGo, YouTube, Amazon, Walmart, Airbnb, TripAdvisor, social media profiles, ad libraries, and more."
+  spec.summary       = "Ruby client for SearchAPI.io - 63 search engines in one gem"
+  spec.description   = "Full-featured Ruby client for SearchAPI.io. Access 63 search engines including Google, Bing, Baidu, Yandex, DuckDuckGo, YouTube, Amazon, Walmart, Airbnb, TripAdvisor, social media profiles, ad libraries, and more."
   spec.homepage      = "https://github.com/aalvaaro/searchapi-ruby"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 3.0"
